@@ -1,15 +1,18 @@
 <template>
 	<div id="app">
+		<CreateQuote />
 		<Quotes />
 	</div>
 </template>
 
 <script>
 import Quotes from "./components/Quotes.vue";
+import CreateQuote from "./components/CreateQuote";
 export default {
 	name: "App",
 	components: {
 		Quotes,
+		CreateQuote,
 	},
 	data() {
 		return {
