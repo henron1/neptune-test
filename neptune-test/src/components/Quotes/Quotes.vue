@@ -6,20 +6,24 @@
 			{{ allQuotes.application.city }}
 			{{ allQuotes.application.state }}
 			{{ allQuotes.application.zip }}
+
 			<span
 				v-if="allQuotes.status.toLowerCase() == 'approved'"
 				class="approved"
-				>{{
-					// capitalizing first letter in the string
+			>
+				<!-- capitalizing first char in string -->
+				{{
 					allQuotes.status.charAt(0).toUpperCase() + allQuotes.status.slice(1)
 				}}</span
 			>
-			<span v-else class="declined">{{
-				allQuotes.status.charAt(0).toUpperCase() + allQuotes.status.slice(1)
-			}}</span>
+			<span v-else class="declined">
+				{{
+					allQuotes.status.charAt(0).toUpperCase() + allQuotes.status.slice(1)
+				}}</span
+			>
 			<p v-if="allQuotes.policy !== undefined">
+				<!-- converting to currency from string -->
 				<span class="premiumBlurb">Total Premium</span>${{
-					// converting to currency
 					Number(allQuotes.policy.totalPremium).toFixed(2)
 				}}
 			</p>
