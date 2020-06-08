@@ -1,0 +1,33 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	max-width: 30%;
+	margin: 0 auto;
+	background-color: rgb(81, 165, 221);
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+
+.inputs {
+	border-radius: 4px;
+	padding: 5px 10px;
+	border: none;
+	border-bottom: 2px solid lightgrey;
+	border-right: 2px solid lightgrey;
+	margin: 5px 0px 10px 0px;
+}
+
+.submitButton {
+	background-color: rgb(252, 23, 141);
+	border: none;
+	border-radius: 4px;
+	padding: 7px 0px;
+	width: 35%;
+	margin: 0 auto;
+	font-weight: bold;
+	font-size: 15px;
+	color: rgb(255, 253, 254);
+	&:hover {
+		background-color: rgb(219, 41, 129);
+	}
+}

@@ -1,10 +1,15 @@
 <template>
 	<div>
-		<h3>Already have a quote?</h3>
-		<h2>Enter your Quote Id below to view it</h2>
-		<form @submit="onSubmit">
-			<input type="text" v-model="quoteNumber" placeholder="Quote Number..." />
-			<input type="submit" value="Submit" />
+		<h2>Already have a quote?</h2>
+		<h3>Enter your Quote Id below to view it</h3>
+		<form class="form" @submit="onSubmit">
+			<input
+				class="inputs"
+				type="text"
+				v-model="quoteNumber"
+				placeholder="Quote Number..."
+			/>
+			<input class="submitButton" type="submit" value="Find Quote" />
 		</form>
 	</div>
 </template>
