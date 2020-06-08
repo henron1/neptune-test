@@ -16,7 +16,7 @@ const actions = {
 			{
 				headers: {
 					"Content-Type": "application/json",
-					Authorization: "2B1E3BEC-83F9-4EE1-8EA5-HANK",
+					Authorization: `${process.env.VUE_APP_AUTHORIZATION}`,
 					"Access-Control-Allow-Origin": "*",
 				},
 			}
