@@ -10,6 +10,7 @@
 				v-if="allQuotes.status.toLowerCase() == 'approved'"
 				class="approved"
 				>{{
+					// capitalizing first letter in the string
 					allQuotes.status.charAt(0).toUpperCase() + allQuotes.status.slice(1)
 				}}</span
 			>
@@ -18,6 +19,7 @@
 			}}</span>
 			<p v-if="allQuotes.policy !== undefined">
 				<span class="premiumBlurb">Total Premium</span>${{
+					// converting to currency
 					Number(allQuotes.policy.totalPremium).toFixed(2)
 				}}
 			</p>
