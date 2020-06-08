@@ -8,6 +8,10 @@
 				{{ allQuotes.application.city }}
 				{{ allQuotes.application.state }}
 				{{ allQuotes.application.zip }}
+				<p v-if="allQuotes.policy !== undefined">
+					${{ Number(allQuotes.policy.totalPremium).toFixed(2) }}
+				</p>
+				<p v-else>No Premium for this account</p>
 			</div>
 		</div>
 	</div>
@@ -18,16 +22,16 @@ import { mapGetters, mapActions } from "vuex";
 export default {
 	name: "Quotes",
 	methods: {
-		...mapActions(["fetchQuotes"]),
+		...mapActions(["fetchQuote"]),
 		// onSubmit(e) {
 		// 	e.preventDefault();
-		// 	this.fetchQuotes();
+		// 	this.fetchQuote();
 		// },
 	},
 	computed: mapGetters(["allQuotes"]),
-	created() {
-		this.fetchQuotes();
-	},
+	// created() {
+	// 	this.fetchQuote();
+	// },
 };
 </script>
 

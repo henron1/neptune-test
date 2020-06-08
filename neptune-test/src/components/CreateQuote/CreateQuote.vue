@@ -8,6 +8,11 @@
 					v-model="application.addr1"
 					placeholder="Enter Address 1..."
 				/>
+				<input
+					type="text"
+					v-model="application.addr2"
+					placeholder="Enter Address 2..."
+				/>
 				<!-- <input type="text" v-model="addr2" placeholder="Enter Address 2..." /> -->
 				<input
 					type="text"
@@ -40,7 +45,7 @@ export default {
 			quoteNumber: "",
 			application: {
 				addr1: "",
-				// addr2: "",
+				addr2: "",
 				city: "",
 				state: "",
 				zip: "",
@@ -48,10 +53,11 @@ export default {
 		};
 	},
 	methods: {
-		...mapActions(["createQuote"]),
+		...mapActions(["createQuote", "fetchQuote"]),
 		onSubmit(e) {
 			e.preventDefault();
 			this.createQuote(this.application);
+			this.fetchQuote();
 		},
 	},
 };

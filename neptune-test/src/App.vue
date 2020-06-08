@@ -1,23 +1,34 @@
 <template>
 	<div id="app">
 		<CreateQuote />
+		<GetQuote />
 		<Quotes />
 	</div>
 </template>
 
 <script>
-import Quotes from "./components/Quotes.vue";
-import CreateQuote from "./components/CreateQuote";
+import Quotes from "./components/Quotes/Quotes.vue";
+import CreateQuote from "./components/CreateQuote/CreateQuote.vue";
+import GetQuote from "./components/GetQuote/GetQuote.vue";
+import { mapActions } from "vuex";
 export default {
 	name: "App",
 	components: {
 		Quotes,
 		CreateQuote,
+		GetQuote,
+	},
+	methods: {
+		...mapActions(["fetchToken"]),
 	},
 	data() {
 		return {
 			quotes: [],
+			token: "",
 		};
+	},
+	created() {
+		this.fetchToken();
 	},
 };
 </script>
